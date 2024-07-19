@@ -295,3 +295,10 @@ A,A,A,"A,A",A
 - can be used in case of .yaml for categorization, but not much effective.
 
 - need to device own method or different tool for parsing of code files.
+
+###  PDF to json (using `hi_res` strategy)
+- tried with [this file](example-docs/embedded-images-tables.pdf)
+- here, we are extracting images and tables
+- conversion is very accurate
+- images and tables are being stored
+- highly effective for PDFs
