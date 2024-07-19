@@ -16,4 +16,4 @@ def generate_pdf_hi_res(filename):
     extract_image_block_types=["Image", "Table"],          # optional
     extract_image_block_to_payload=False,                  # optional
     extract_image_block_output_dir="save",  # optional - only works when ``extract_image_block_to_payload=False``
-    )
+)
