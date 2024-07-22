@@ -12,10 +12,10 @@ def generate_elements(filename: str)-> List[Element]:
 def generate_pdf_hi_res(filename: str)-> List[Element]:
     dir_name = filename.split(".")[0]
     return partition_pdf(
-    filename=filename,                                     # mandatory
-    strategy="hi_res",                                     # mandatory to use ``hi_res`` strategy
-    extract_images_in_pdf=True,                            # mandatory to set as ``True``
-    extract_image_block_types=["Image", "Table"],          # optional
-    extract_image_block_to_payload=False,                  # optional
-    extract_image_block_output_dir=f"save/{dir_name}/",  # optional - only works when ``extract_image_block_to_payload=False``
+        filename=filename,                                     # mandatory
+        strategy="hi_res",                                     # mandatory to use ``hi_res`` strategy
+        extract_images_in_pdf=True,                            # mandatory to set as ``True``
+        extract_image_block_types=["Image", "Table"],          # optional
+        extract_image_block_to_payload=False,                  # optional
+        extract_image_block_output_dir=f"save/{dir_name}/",  # optional - only works when ``extract_image_block_to_payload=False``
     )
