@@ -3,6 +3,7 @@ from unstructured.embed.huggingface import HuggingFaceEmbeddingConfig, HuggingFa
 from unstructured.documents.elements import Element
 import os
 from dotenv import load_dotenv, find_dotenv
+from typing import List
 
 load_dotenv(find_dotenv())
 
@@ -15,14 +16,14 @@ hf_encoder = HuggingFaceEmbeddingEncoder(
     HuggingFaceEmbeddingConfig()
 )
 
-def create_document_embeddings_openai(chunks: list[Element]):
+def create_document_embeddings_openai(chunks: List[Element])->List[Element]:
     return openai_encoder.embed_documents(chunks)
 
-def create_query_embeddings_openai(queries: list[str]):
+def create_query_embeddings_openai(queries: List[str]) -> List[List[float]]:
     return [openai_encoder.embed_query(query) for query in queries]
 
-def create_document_embeddings_hf(chunks: list[Element]):
+def create_document_embeddings_hf(chunks: List[Element]) -> List[Element]:
     return hf_encoder.embed_documents(chunks)
 
-def create_query_embeddings_hf(queries: list[str]):
+def create_query_embeddings_hf(queries: List[str])-> List[List[float]]:
     return [hf_encoder.embed_query(query) for query in queries]
